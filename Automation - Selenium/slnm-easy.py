@@ -33,6 +33,15 @@ Value_for_b.clear()
 
 Value_for_a.send_keys("10")
 Value_for_b.send_keys("15")
+assert "Get Total" in chrome_browser.page_source
+# Get_Total = chrome_browser.find_element("Get Total")
+# Get_Total.click()
+Total = chrome_browser.find_element_by_xpath(
+    "/html/body/div[2]/div/div[2]/div[2]/div[2]/form/button")
+Total.click()
 
-Get_Total = chrome_browser.find_elements_by_class_name("btn-default")
-Get_Total.click()
+Result = chrome_browser.find_element_by_id("displayvalue")
+
+assert "25" in Result.text
+
+print(Result.text)
