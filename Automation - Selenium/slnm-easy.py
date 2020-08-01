@@ -1,5 +1,5 @@
 from selenium import webdriver
-
+from selenium.webdriver.common.keys import Keys
 
 chrome_browser = webdriver.Chrome("./chromedriver")
 
@@ -34,10 +34,5 @@ Value_for_b.clear()
 Value_for_a.send_keys("10")
 Value_for_b.send_keys("15")
 
-Get_Total_button = chrome_browser.find_elements_by_class_name(
-    "btn btn-default")
-Get_Total_button.click()
-
-output_message2 = chrome_browser.find_elements_by_id("displayvalue")
-print(output_message2)
-# chrome_browser.close()
+Get_Total = chrome_browser.find_elements_by_class_name("btn-default")
+Get_Total.click()
