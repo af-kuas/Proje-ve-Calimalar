@@ -1,0 +1,43 @@
+from selenium import webdriver
+
+
+chrome_browser = webdriver.Chrome("./chromedriver")
+
+# print(chrome_browser)
+# chrome_browser.maximize_window()
+chrome_browser.maximize_window()
+chrome_browser.get(
+    "https://www.seleniumeasy.com/test/basic-first-form-demo.html")
+
+show_message_button = chrome_browser.find_element_by_class_name(
+    "btn-default")
+
+assert "Show Message" in chrome_browser.page_source
+
+user_message = chrome_browser.find_element_by_id("user-message")
+user_message.clear()
+user_message.send_keys("ı am extra cool...")
+
+show_message_button.click()
+
+output_message = chrome_browser.find_element_by_id("display")
+print(output_message)
+
+assert "ı am extra cool..." in output_message.text
+
+Value_for_a = chrome_browser.find_element_by_id("sum1")
+Value_for_b = chrome_browser.find_element_by_id("sum2")
+
+Value_for_a.clear()
+Value_for_b.clear()
+
+Value_for_a.send_keys("10")
+Value_for_b.send_keys("15")
+
+Get_Total_button = chrome_browser.find_elements_by_class_name(
+    "btn btn-default")
+Get_Total_button.click()
+
+output_message2 = chrome_browser.find_elements_by_id("displayvalue")
+print(output_message2)
+# chrome_browser.close()
