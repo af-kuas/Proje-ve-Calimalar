@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 
 chrome_browser = webdriver.Chrome("./chromedriver")
@@ -45,3 +46,9 @@ Result = chrome_browser.find_element_by_id("displayvalue")
 assert "25" in Result.text
 
 print(Result.text)
+
+chrome_browser.implicitly_wait(100)
+chrome_browser.find_element_by_partial_link_text("Input Forms").click()
+chrome_browser.find_element_by_partial_link_text("Checkbox Demo").click()
+
+chrome_browser.find_element_by_id("isAgeSelected").click()
