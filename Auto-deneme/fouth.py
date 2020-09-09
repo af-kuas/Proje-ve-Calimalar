@@ -1,0 +1,38 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+
+chrome_browser = webdriver.Chrome("./chromedriver")
+chrome_browser.maximize_window()
+chrome_browser.get(
+    "https://www.storyinsta.com/anonymity")
+chrome_browser.find_element_by_id("search_input").send_keys("b.basakoguz")
+chrome_browser.find_element_by_id("search_button").click()
+chrome_browser.find_element_by_class_name("autocomplete-name").click()
+# sleep(10)
+
+# chrome_browser.find_element_by_id(
+#     "UserName").send_keys("g131210055")
+# chrome_browser.find_element_by_id(
+#     "Password").send_keys("haggard04")
+# chrome_browser.find_element_by_id("btnLogin").click()
+# chrome_browser.find_element_by_link_text("ÖĞRENCİ BİLGİ SİSTEMİ").click()
+# chrome_browser.find_element_by_id("Username").send_keys("g131210055")
+# chrome_browser.find_element_by_id("Password").send_keys("haggard04")
+# chrome_browser.find_element_by_name(
+#     "button").click()
+# chrome_browser.find_element_by_partial_link_text("Diğer İşlemler").click()
+# chrome_browser.find_element_by_partial_link_text("Seçilen Dersler").click()
+
+# sleep(8)
+# chrome_browser.find_element_by_partial_link_text("Transkript").click()
+
+# body = chrome_browser.find_element_by_css_selector('body')
+# body.send_keys(Keys.END)
+# sleep(8)
+# # open new blank tab
+# chrome_browser.execute_script("window.open();")
+
+# # switch to the new window which is second in window_handles array
+# chrome_browser.switch_to_window(chrome_browser.window_handles[1])
+# chrome_browser.get("https://duckduckgo.com")
